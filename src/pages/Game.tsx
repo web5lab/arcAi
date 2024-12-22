@@ -37,7 +37,9 @@ export function Game() {
               {activeTab === 'train' && (
                 <>
                   <GameStats />
-                  <MinerProfile />
+                  <MinerProfile onLevelClick={function (): void {
+                    throw new Error('Function not implemented.');
+                  } } />
                   <EnergyBar />
                 </>
               )}
