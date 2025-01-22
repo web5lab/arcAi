@@ -79,7 +79,7 @@ export function P2PFeaturesSection() {
 
           {/* Left Column - Preview */}
           <div className="p-6 relative flex items-center justify-center">
-            <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 via-purple-500/10 to-cyan-500/10" />
+            <div className="absolute" />
             <div className="relative w-full max-w-[280px] mx-auto">
               {/* Phone Frame */}
               <div className={`

@@ -13,7 +13,7 @@ export function GameHeader({ mode = 'game' }) {
   return (
     <>
     <div className={`
-      px-4 py-4 flex items-center justify-between
+      px-4 py-4 flex items-center max-w-md justify-between fixed top-0  w-full z-40
       ${theme === 'dark' ? 'bg-slate-800/90' : 'bg-white/90'}
       backdrop-blur-sm border-b ${theme === 'dark' ? 'border-slate-700' : 'border-slate-200'}
     `}>

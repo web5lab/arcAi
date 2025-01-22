@@ -35,7 +35,7 @@ export function TelegramBotSection() {
   const { theme } = useTheme();
   
   return (
-    <div className="mt-32">
+    <div className="mt-2">
       <div className="text-center mb-16">
         <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-blue-500/10 to-cyan-400/10 px-4 py-2 rounded-full mb-4">
           <MessageCircle className="w-5 h-5 text-blue-500" />

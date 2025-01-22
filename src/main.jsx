@@ -16,7 +16,7 @@ import './index.css';
 
 const router = createBrowserRouter([
   {
-    path: '/',
+    path: '/test',
     element: <App />,
   },
   {
@@ -40,8 +40,8 @@ const router = createBrowserRouter([
     element: <TradeExecution />,
   },
   {
-    path: '/game',
-    element: <Game />,
+    path: '/',
+    element: <App />,
   },
   {
     path: '/integration',

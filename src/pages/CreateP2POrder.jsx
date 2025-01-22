@@ -16,7 +16,7 @@ export function CreateP2POrder() {
   const [orderType, setOrderType] = useState('buy');
   const [price, setPrice] = useState('');
   const [amount, setAmount] = useState('');
-  const [selectedToken, setSelectedToken] = useState>(null);
+  const [selectedToken, setSelectedToken] = useState(null);
   const [showTokenSearch, setShowTokenSearch] = useState(false);
   const [showWhitelist, setShowWhitelist] = useState(false);
   const [isPrivate, setIsPrivate] = useState(false);

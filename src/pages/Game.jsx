@@ -28,7 +28,7 @@ export function Game() {
 
   return (
     <div className={`${theme} min-h-screen cursor-auto`}>
-      <div className="max-w-md mx-auto relative pb-20">
+      <div className="max-w-md mx-auto relative py-20">
         <GameHeader mode={mode} />
         <main className="px-4 pt-4">
           {activeTab === 'train' && <ClaimButton onClick={() => setShowVault(true)} />}
