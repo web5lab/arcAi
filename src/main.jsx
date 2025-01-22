@@ -24,7 +24,7 @@ const router = createBrowserRouter([
     element: <Dex />,
   },
   {
-    path: '/p2p',
+    path: '/',
     element: <P2PMarket />,
   },
   {
@@ -40,7 +40,7 @@ const router = createBrowserRouter([
     element: <TradeExecution />,
   },
   {
-    path: '/',
+    path: '/home',
     element: <App />,
   },
   {

@@ -57,7 +57,7 @@ export function Header() {
               `}
             >
               <Wallet className="w-4 h-4 text-blue-500" />
-              <span>Connect</span>
+              <span>Dapp</span>
             </button>
 
             
