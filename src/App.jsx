@@ -15,6 +15,8 @@ import { NewsletterSection } from './components/NewsletterSection';
 import { Footer } from './components/Footer';
 import { FloatingBot } from './components/FloatingBot';
 
+
+
 function App() {
   const { theme } = useTheme();
 

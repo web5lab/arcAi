@@ -1,6 +1,7 @@
 import React from 'react';
 import { Bot, ChevronRight, Moon, Sun, Wallet } from 'lucide-react';
 import { useTheme } from './ThemeProvider';
+import logo from '../assets/logo.png';
 
 function NavLink({ href, children }) {
   const { theme } = useTheme();
@@ -22,9 +23,11 @@ export function Header() {
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <div className="flex items-center space-x-2">
-            <Bot className="w-8 h-8 text-blue-500" />
-            <span className="text-xl font-bold">arcAi</span>
+          <div className="flex items-center space-x-2" onClick={() => {
+            navigate('/home')
+          }}>
+            <img src={logo} className="w-12 h-12 text-blue-500" />
+            <span className="text-xl font-bold">ArcAi</span>
           </div>
           
           {/* Navigation - Hidden on mobile */}

@@ -8,6 +8,7 @@ import { MarketHeader } from '../components/p2p/MarketHeader';
 import { TokenCard } from '../components/p2p/TokenCard';
 import { Bot, Plus, ArrowRight } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import { FloatingBot } from '../components/FloatingBot';
 
 const mockTokens = [
   {
@@ -49,32 +50,9 @@ export function P2PMarket() {
 
   return (
     <div className={`${theme} custom-cursor-page`}>
-      <CustomCursor />
-      <ParticleBackground />
       <div className="relative z-10 min-h-screen flex flex-col">
         <DexHeader />
         <main className="flex-grow container mx-auto px-6 py-24">
-          <div className="mb-8">
-            <h1 className="text-3xl font-bold mb-2">P2P Market</h1>
-            <p className={`${theme === 'dark' ? 'text-slate-400' : 'text-slate-600'}`}>
-              Create and trade tokens directly with other users through secure peer-to-peer transactions
-            </p>
-          </div>
-
-          <button
-            onClick={() => navigate('/p2p/create')}
-            className={`
-              w-full mb-6 py-3 rounded-xl font-medium
-              bg-gradient-to-r from-blue-500 to-purple-500
-              text-white flex items-center justify-center gap-2
-              hover:opacity-90 transition-opacity
-            `}
-          >
-            <Plus className="w-5 h-5" />
-            <span>Create P2P Order</span>
-            <ArrowRight className="w-5 h-5" />
-          </button>
-
           <MarketHeader
             searchQuery={searchQuery}
             onSearchChange={setSearchQuery}
@@ -122,6 +100,7 @@ export function P2PMarket() {
           )}
         </main>
         <DexFooter />
+        <FloatingBot />
       </div>
     </div>
   );
