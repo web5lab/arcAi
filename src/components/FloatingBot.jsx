@@ -111,7 +111,7 @@ export const FloatingBot = () => {
   };
 
   return (
-    <div className="fixed bottom-20 right-8 z-50">
+    <div className="fixed md:bottom-20 bottom-2 md:right-8 right-2 z-50">
       {isOpen ? (
         <motion.div
           initial={{ scale: 0, opacity: 0 }}
@@ -164,8 +164,8 @@ export const FloatingBot = () => {
             </div>
           </div>
 
-          <div className="p-2 border-t border-gray-700 relative">
-            <div className="flex gap-2">
+          <div className="py-4 px-2 border-t border-gray-700 relative">
+            <div className="flex space-x-2">
               <input
                 type="text"
                 value={inputValue}
@@ -188,7 +188,7 @@ export const FloatingBot = () => {
                 <Send className="w-5 h-5" />
               </button>
             </div>
-            <div className='w-full flex justify-center items-center mt-1  opacity-50'>
+            <div className='w-full flex justify-center items-center mt-1 font-semibold opacity-50'>
             <a className=' underline cursor-pointer'>Powered By ArcAi</a>
             </div>
           
@@ -223,7 +223,7 @@ export const FloatingBot = () => {
         <div className="relative">
           <motion.div
             animate={controls}
-            className="relative"
+            className="relative hidden md:block"
             whileHover={{ scale: 1.1 }}
             drag
             dragConstraints={{ left: -100, right: 100, top: -100, bottom: 100 }}
@@ -232,7 +232,45 @@ export const FloatingBot = () => {
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.3 }}
-              className="absolute bottom-full bg-gradient-to-r from-blue-500 to-cyan-400 right-0 mb-2  rounded-lg p-2 text-sm w-48 shadow-lg"
+              className="absolute hidden md:block bottom-full bg-gradient-to-r from-blue-500 to-cyan-400 right-0 mb-2  rounded-lg p-2 text-sm w-48 shadow-lg"
+            >
+              <div className="relative">
+                <p className="text-white">{currentThought}</p>
+
+              </div>
+            </motion.div>
+
+
+            <button
+              onClick={() => setIsOpen(true)}
+              className={`
+          group relative w-16 h-16 rounded-full
+          flex items-center justify-center
+          shadow-lg hover:shadow-xl
+          hover:scale-110 active:scale-95
+        
+        `}
+            >
+              <img src={botLogo} className="w-16 h-16 text-white" />
+
+              {/* Glow Effect */}
+              <div className="absolute inset-0 rounded-full bg-blue-500 blur-xl opacity-40 group-hover:opacity-60 transition-opacity -z-10" />
+
+              {/* Pulse Effect */}
+              <div className="absolute inset-0 rounded-full animate-ping bg-blue-500 opacity-20" />
+            </button>
+          </motion.div>
+          <motion.div
+            className="relative md:hidden"
+            whileHover={{ scale: 1.1 }}
+            drag
+            dragConstraints={{ left: -100, right: 100, top: -100, bottom: 100 }}
+          >
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.3 }}
+              className="absolute hidden md:block bottom-full bg-gradient-to-r from-blue-500 to-cyan-400 right-0 mb-2  rounded-lg p-2 text-sm w-48 shadow-lg"
             >
               <div className="relative">
                 <p className="text-white">{currentThought}</p>

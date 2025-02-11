@@ -2,6 +2,7 @@ import React from 'react';
 import { Bot, ChevronRight, Moon, Sun, Wallet } from 'lucide-react';
 import { useTheme } from './ThemeProvider';
 import logo from '../assets/logo.png';
+import { useNavigate } from 'react-router-dom';
 
 function NavLink({ href, children }) {
   const { theme } = useTheme();
@@ -17,7 +18,7 @@ function NavLink({ href, children }) {
 
 export function Header() {
   const { theme, toggleTheme } = useTheme();
-
+  const navigate = useNavigate()
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 ${theme === 'dark' ? 'bg-slate-900/50' : 'bg-white/50'} backdrop-blur-sm border-b ${theme === 'dark' ? 'border-slate-800' : 'border-slate-200'}`}>
       <div className="container mx-auto px-6 py-4">
@@ -26,18 +27,18 @@ export function Header() {
           <div className="flex items-center space-x-2" onClick={() => {
             navigate('/home')
           }}>
-            <img src={logo} className="w-12 h-12 text-blue-500" />
+            <img src={logo} className="w-10 h-10 text-blue-500" />
             <span className="text-xl font-bold">ArcAi</span>
           </div>
-          
+
           {/* Navigation - Hidden on mobile */}
           <div className="hidden md:flex items-center space-x-8">
-            <NavLink href="#about">About</NavLink>
-            <NavLink href="#tokenomics">Tokenomics</NavLink>
-            <NavLink href="#roadmap">Roadmap</NavLink>
-            <NavLink href="#partnerships">Partners</NavLink>
+            <NavLink href="#roadmap">Trade</NavLink>
+            <NavLink href="#about">Create</NavLink>
+            <NavLink href="#partnerships">Integration</NavLink>
+            <NavLink href="#tokenomics">WhitePaper</NavLink>
           </div>
-          
+
           {/* Actions */}
           <div className="flex items-center space-x-4">
             <button
@@ -51,8 +52,11 @@ export function Header() {
                 <Moon className="w-5 h-5 text-blue-500" />
               )}
             </button>
-            
-            <button 
+
+            <button
+              onClick={() => {
+                navigate('/')
+              }}
               className={`
                 hidden sm:flex items-center space-x-2 px-4 py-2 rounded-xl
                 border transition-all
@@ -63,7 +67,7 @@ export function Header() {
               <span>Dapp</span>
             </button>
 
-            
+
           </div>
         </div>
       </div>

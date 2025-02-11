@@ -22,7 +22,6 @@ function App() {
 
   return (
     <div className={`${theme} custom-cursor-page`}>
-      <CustomCursor />
       <ParticleBackground />
       <div className="relative z-10">
         <Header />

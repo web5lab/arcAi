@@ -34,7 +34,7 @@ export function MarketHeader({
       </div>
 
       <div className="flex gap-2">
-        <div className="relative">
+        <div className="relative hidden md:block">
           <button
             onClick={() => setShowSortDropdown(!showSortDropdown)}
             className={`
@@ -85,7 +85,7 @@ export function MarketHeader({
           )}
         </div>
 
-        <div className="relative">
+        <div className="relative hidden md:block">
           <button
             onClick={() => setShowTypeDropdown(!showTypeDropdown)}
             className={`
@@ -134,6 +134,18 @@ export function MarketHeader({
             </div>
           )}
         </div>
+       
+          <button
+            onClick={() => setShowTypeDropdown(!showTypeDropdown)}
+            className={`
+              px-4 py-2.5 rounded-xl items-center min-w-[100px] w-full flex justify-center
+              ${theme === 'dark' ? 'bg-slate-800/50' : 'bg-white/50'}
+              border ${theme === 'dark' ? 'border-slate-700' : 'border-slate-200'}
+              hover:border-blue-500/20 transition-all
+            `}
+          >
+           Create Order
+          </button>          
       </div>
     </div>
   );

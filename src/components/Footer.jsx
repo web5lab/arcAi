@@ -21,7 +21,7 @@ export function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className={`${theme === 'dark' ? 'bg-slate-900/50' : 'bg-white/50'} backdrop-blur-sm mt-32 py-12 border-t ${theme === 'dark' ? 'border-slate-800' : 'border-slate-200'}`}>
+    <footer className={`${theme === 'dark' ? 'bg-slate-900/50' : 'bg-white/50'} backdrop-blur-sm  py-12 border-t ${theme === 'dark' ? 'border-slate-800' : 'border-slate-200'}`}>
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
           {/* Brand */}

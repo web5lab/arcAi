@@ -23,6 +23,28 @@ const mockTokens = [
     marketCap: 85000000
   },
   {
+    symbol: '$ARC',
+    name: 'ArcAi',
+    description: 'The future of decentralized AI gaming and token creation platform.',
+    price: 0.85,
+    priceChange: 7.89,
+    offered: 4.39,
+    offeredPrice: 44.37,
+    volume24h: 1200000,
+    marketCap: 85000000
+  },
+  {
+    symbol: '$ARC',
+    name: 'ArcAi',
+    description: 'The future of decentralized AI gaming and token creation platform.',
+    price: 0.85,
+    priceChange: 7.89,
+    offered: 4.39,
+    offeredPrice: 44.37,
+    volume24h: 1200000,
+    marketCap: 85000000
+  },
+  {
     symbol: '$GEM',
     name: 'Neural Gem',
     description: 'Revolutionary AI-powered gaming token with unique mining mechanics.',
@@ -63,7 +85,7 @@ export function P2PMarket() {
           />
 
           {filteredTokens.length > 0 ? (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
               {filteredTokens.map((token, index) => (
                 <TokenCard
                   key={index}

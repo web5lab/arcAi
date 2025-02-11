@@ -13,12 +13,13 @@ export function TokenCard({
   offered,
   offeredPrice,
   volume24h,
-  marketCap
+  marketCap,
+  progress = 75
 }) {
   const { theme } = useTheme();
   const isPriceUp = priceChange > 0;
   const navigate = useNavigate();
-  
+
   const handleBuy = (e) => {
     e.preventDefault(); // Prevent navigation
     navigate(`/p2p/trade/${symbol}`, {
@@ -69,7 +70,7 @@ export function TokenCard({
         </div>
         <div className={`
           px-3 py-1 rounded-lg text-sm font-medium flex items-center gap-1
-          ${isPriceUp 
+          ${isPriceUp
             ? theme === 'dark' ? 'bg-green-500/10 text-green-400' : 'bg-green-100 text-green-600'
             : theme === 'dark' ? 'bg-red-500/10 text-red-400' : 'bg-red-100 text-red-600'
           }
@@ -78,30 +79,28 @@ export function TokenCard({
           <span>{Math.abs(priceChange).toFixed(2)}%</span>
         </div>
       </div>
-
-      <p className="text-sm text-slate-500 mb-6 line-clamp-2">{description}</p>
-
-      <div className="grid grid-cols-2 gap-6 mb-6">
-        <div className="space-y-4">
-          <div>
-            <div className="text-sm text-slate-500 mb-1">Price</div>
-            <div className="text-lg font-bold">${price.toFixed(3)}</div>
-          </div>
-          <div>
-            <div className="text-sm text-slate-500 mb-1">Market Cap</div>
-            <div className="font-medium">{formatNumber(marketCap)}</div>
-          </div>
+      <div className=" grid grid-cols-2 gap-6 mb-6">
+        <div>
+          <div className="text-sm text-slate-500 mb-1">Price</div>
+          <div className="text-lg font-bold">${price.toFixed(3)}</div>
         </div>
-        <div className="space-y-4">
-          <div>
-            <div className="text-sm text-slate-500 mb-1">24h Volume</div>
-            <div className="font-medium">{formatNumber(volume24h)}</div>
-          </div>
-          <div>
-            <div className="text-sm text-slate-500 mb-1">Offered Amount</div>
-            <div className="font-medium">{offered.toLocaleString()}</div>
-          </div>
+        <div className=' ml-auto'>
+          <div className="text-sm text-slate-500 mb-1">Price</div>
+          <div className="text-lg font-bold">${price.toFixed(3)}</div>
         </div>
+      </div>
+      <div className="mb-4">
+        <div className="text-xs text-slate-500 mb-1">Progress</div>
+        <div className="relative w-full h-3 bg-slate-200 rounded-full overflow-hidden">
+          <div
+            className="h-full rounded-full transition-all"
+            style={{
+              width: `${progress}%`,
+              backgroundColor: theme === 'dark' ? '#3b82f6' : '#60a5fa'
+            }}
+          />
+        </div>
+        <div className="text-right text-xs text-slate-500 mt-1">{progress}%</div>
       </div>
 
       <div className="flex items-center justify-between border-t ${theme === 'dark' ? 'border-slate-700/50' : 'border-slate-200/50'} pt-6">
@@ -118,9 +117,9 @@ export function TokenCard({
           `}
         >
           <ShoppingCart className="w-4 h-4" />
-          Trade Now
+          Buy Order
         </button>
-       </div>
+      </div>
     </Link>
   );
 }
